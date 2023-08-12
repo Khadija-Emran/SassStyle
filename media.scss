@@ -1,0 +1,25 @@
+/* Small Screen */
+@media(min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+@media(max-width: 768px){
+    .services .container .row .col .service{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* Medium Screen */
+@media(min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large Screen */
+@media(min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+    
+} 

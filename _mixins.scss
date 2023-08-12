@@ -1,0 +1,128 @@
+@mixin container{
+    padding-right:15p !important;
+    padding-left: 15px;
+    margin-left:auto;
+    margin-right:auto;
+}// End mixin
+@mixin justify_space_between{
+    display: flex;
+    justify-content: space-between;
+}// End mixin
+@mixin list-icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    span{
+        background-color: $secondary-color;
+        margin-bottom: 5px;
+        height: 2px;
+    }
+    span:first-child{
+        width:100%
+    }
+    span:nth-child(2){
+        width: 60%;
+        transition: 0.3s;
+    }
+    span:nth-child(2):hover{
+        width: 100%;
+    }
+    span:last-child{
+        width:100%
+    }
+}// End mixin
+@mixin drop-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    list-style: none;
+    background-color: $section-bg;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    z-index: 5;
+    display:none;
+    ::before{
+        @include up_arrow;
+    }
+    li{
+        a{
+            @include link($secondary-color);
+        }
+        a:hover{
+            padding-left: 25px;
+        }
+    }
+    li:not(:last-child) a{
+        border-bottom: 1px solid $border-color;
+    }
+}// End mixin
+@mixin up_arrow {
+    content: '';
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent $section-bg transparent;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}// End mixin
+@mixin link($color) {
+    text-decoration: none;
+    padding: 15px;
+    color: $color;
+    transition: 0.3s;
+    display: block;
+}// End mixin
+@mixin item-center{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+}//End mixin
+@mixin overlay($width, $height){
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: $width;
+    height: $height;
+    z-index: 2s;
+    background-color: rgba(0,0,0,0.8);
+    color: $light-color;
+}
+@mixin text-heading($size, $color){
+    font-size: $size;
+    font-weight: bold;
+    color: $color;
+    margin: 0;
+}//End mixin
+@mixin row-cols($count){
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100%/$count), 1fr));
+}//End mixin
+@mixin col{
+    text-align: center;
+    padding: 60px;
+}//End mixin
+@mixin special-heading($color, $size){
+    color: $color;
+    font-size: $size;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+    letter-spacing: -3px;
+}//End mixin
+@mixin special-p($color, $size) {
+    color: $color;
+    font-size: $size;
+    text-align: center;
+    margin-top: -80px;
+}
+@mixin section($bg-color){
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: $bg-color;
+}
